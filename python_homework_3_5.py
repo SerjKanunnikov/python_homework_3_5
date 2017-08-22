@@ -20,13 +20,13 @@ def currency(currencies):
         for trip in f:
             destination = trip.split(" ")[0]
             cost = trip.split(" ")[1]
-            curr = trip.split(" ")[2]
-            print(destination, (cl.service.ConvertToStr(
+            curr = trip.split(" ")[2].strip()
+            print(destination, cl.service.ConvertToNum(
                 fromCurrency=curr,
                 toCurrency="RUB",
-                round=True,
+                rounding=False,
                 amount=cost
-            )))
+            ))
 
 
 if __name__ == "__main__":
